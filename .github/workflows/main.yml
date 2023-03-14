@@ -34,7 +34,7 @@ jobs:
         with:
           # в значение GITHUB_TOKEN помещается ссылка на ваш секрет в репозитории
           # в данном случае его название KEY
-          GITHUB_TOKEN: ${{ DEPLOY }}
+          GITHUB_TOKEN: ${{ DEPLOY.KEY }}
           BRANCH: gh-pages
           FOLDER: build
           CLEAN: true
