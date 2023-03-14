@@ -30,11 +30,12 @@ function HomePage() {
 
         setShowButton(true);
       } catch (error) {
-        alert("error");
+        setError(error);
       }
     }
 
     findCharacters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const changeFilter = async ({ target: { value } }) => {
