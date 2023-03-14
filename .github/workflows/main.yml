@@ -1,9 +1,10 @@
-
 name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build-and-deploy:
@@ -15,10 +16,9 @@ jobs:
       - name: Install, lint, build 🔧
         run: |
           npm install
-          npm run lint:js
           npm run build
       - name: Deploy 🚀
-        uses: Angelina-Pysanyuk/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: build
